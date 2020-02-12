@@ -1,0 +1,106 @@
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card class="box">
+    <mat-card-header>
+      <mat-card-title class="header"><span>Employee Register Form</span></mat-card-title>
+    </mat-card-header>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <mat-card-content>
+
+      <div class="form-group">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Employee Name" formControlName="Name" class="form-control"> 
+        </mat-form-field>
+        <br>
+      </div>
+       
+      <div class="form-group">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Mobile Number" formControlName="MobileNo" class="form-control" >
+        </mat-form-field>
+        <br>
+      </div>
+
+        <div class="form-group">
+        <mat-form-field class="example-full-width">
+            <input matInput [matDatepicker]="picker" placeholder="Date of Birth"  formControlName="DOB" class="form-control">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        <br>
+      </div>
+
+        <div class="form-group">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Blood Group" formControlName="BloodGroup" class="form-control">
+        </mat-form-field>
+        <br>
+        </div>
+      
+        <div class="form-group">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Emergency Contact Number" formControlName="ECN" class="form-control">
+        </mat-form-field>
+        <br>
+      </div>
+
+        <div class="form-group">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Address" formControlName="Address" class="form-control">
+        </mat-form-field>
+        <br>
+        </div>
+
+        <div class="form-group">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="PAN Number" formControlName="PANNo" class="form-control" >
+        </mat-form-field>
+        <br>
+      </div>
+
+        <div class="form-group">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Bank Account Number" formControlName="BAN" class="form-control">
+        </mat-form-field>
+        <br>
+      </div>
+      
+        <div class="form-group">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Bank Name" formControlName="BankName" class="form-control">
+        </mat-form-field>
+        <br>
+      </div>
+
+        <div class="form-group">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Bank IFSC code" formControlName="IFSC" class="form-control">
+        </mat-form-field>
+        <br>
+      </div>
+
+        <div class="form-group">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Personal Email ID" formControlName="email" class="form-control">
+        </mat-form-field>
+        <br>
+      </div>
+
+        <div class="form-group">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Active" formControlName="Active" class="form-control">
+        </mat-form-field>
+        <br>
+        </div>
+      
+        <div class="form-group">
+      <button mat-stroked-button color="warn" class="btn-block">SUBMIT</button>
+    </div>
+
+
+      </mat-card-content>
+     
+    </form>
+  </mat-card>
+
+</div>
