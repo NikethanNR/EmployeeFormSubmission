@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Details } from '../register/Detail';
 
 @Component({
   selector: 'app-log-in',
@@ -9,48 +8,33 @@ import { Details } from '../register/Detail';
   styleUrls: ['./log-in.component.css']
 })
 export class LogInComponent implements OnInit {
-    data: any;
-    registerForm: FormGroup;
-    public detail: Details[] = [];
-    public allowCustom: boolean = true;
-    dataItem: any;
+  data: any;
+  registerForm: FormGroup;
+  public allowCustom: boolean = true;
 
-    constructor(private formBuilder: FormBuilder,public router: Router, public route: ActivatedRoute) {
-    }
-  
-    public addHandler({ sender }) {
-      let detail = new Details();
-      console.log('detail: ', detail);
-      let registerForm = this.createFormGroup();
-      sender.addRow(registerForm);
-  
-    }
+  constructor(private formBuilder: FormBuilder, public router: Router, public route: ActivatedRoute) {
+  }
 
-    public createFormGroup( ): FormGroup {
-        return this.formBuilder.group({
+  public ngOnInit(): void {
+    
+    this.registerForm = this.formBuilder.group({
+      'Name': ['', Validators.required],
+      'MobileNo': ['', Validators.required],
+      'DOB': ['', Validators.required],
+      'BloodGroup': ['', Validators.required],
+      'ECN': ['', Validators.required],
+      'Address': ['', Validators.required],
+      'PANNo': ['', Validators.required],
+      'BAN': ['', Validators.required],
+      'BankName': ['', Validators.required],
+      'IFSC': ['', Validators.required],
+      'email': ['', [Validators.required, Validators.email]],
+      'Active': ['', Validators.required]
+    });
 
-            'Name': [this.data.Name, Validators.required],
-            'MobileNo': [this.data.Name, Validators.required],
-            'DOB': [this.data.Name, Validators.required],
-            'DOJ': [this.data.Name, Validators.required],
-            'BoodGroup': [this.data.Name, Validators.required],
-            'EmergencyNo': [this.data.Name, Validators.required],
-            'Address': [this.data.Name,Validators.required],
-            'PANNo': [this.data.Name, Validators.required],
-            'BankAccountNo': [this.data.Name, Validators.required],
-            'BankName': [this.data.Name,Validators.required],
-            'IFSCCode': [this.data.Name, Validators.required],
-            'EmailID': [this.data.Name, Validators.required],
-            'Active': [this.data.Name, Validators.required],
-        });
-    }
-
-    public ngOnInit(): void {
-        
-            this.route.queryParams.subscribe((params) => {
-              const data = JSON.parse(params["data"]);
-              console.log(params);
-            });
-          }
-
-    }
+    this.route.queryParams.subscribe((params) => {
+      console.log(params);
+      this.data = JSON.parse(params.data);
+    });
+  }
+}

@@ -23,9 +23,7 @@
 
         <div class="form-group">
         <mat-form-field class="example-full-width">
-            <input matInput [matDatepicker]="picker" placeholder="Date of Birth"  formControlName="DOB" class="form-control">
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
+            <input matInput placeholder="Date of Birth"  formControlName="DOB" class="form-control">
           </mat-form-field>
         <br>
       </div>
@@ -35,6 +33,7 @@
           <input matInput placeholder="Blood Group" formControlName="BloodGroup" class="form-control">
         </mat-form-field>
         <br>
+        
         </div>
       
         <div class="form-group">
@@ -96,7 +95,6 @@
         <div class="form-group">
       <button mat-stroked-button color="warn" class="btn-block">SUBMIT</button>
     </div>
-
 
       </mat-card-content>
      
